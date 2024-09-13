@@ -16,6 +16,7 @@ defmodule AngularphoenixWeb.Router do
 
   scope "/api", AngularphoenixWeb do
     pipe_through :api
+
     resources "/products", ProductController
   end
 

@@ -11,12 +11,15 @@ defmodule AngularphoenixWeb.ProductController do
     render(conn, :index, products: products)
   end
 
-  def create(conn, %{"product" => product_params}) do
-    with {:ok, %Product{} = product} <- Catalog.create_product(product_params) do
-      conn
-      |> put_status(:created)
-      |> put_resp_header("location", ~p"/api/products/#{product}")
-      |> render(:show, product: product)
+  def create(conn, product_params) do
+    case  Catalog.create_product(product_params) do
+      {:ok, _product} ->
+        json(conn, %{"status" => "Created"})
+
+      {:error, changeset} ->
+        conn
+        |> put_status(:bad_request)
+        |> json(%{errors: changeset})
     end
   end
 
@@ -25,11 +28,23 @@ defmodule AngularphoenixWeb.ProductController do
     render(conn, :show, product: product)
   end
 
-  def update(conn, %{"id" => id, "product" => product_params}) do
-    product = Catalog.get_product!(id)
+  def update(conn, product_params) do
+    id = String.to_integer(product_params["id"])
+    # Assuming you have a Product schema and Repo available
+    case Catalog.get_product!(id) do
+      nil ->
+        send_resp(conn, 404, "Product not found")
 
-    with {:ok, %Product{} = product} <- Catalog.update_product(product, product_params) do
-      render(conn, :show, product: product)
+      product ->
+        case Catalog.update_product(product, product_params) do
+          {:ok, _product} ->
+            json(conn, %{"status" => "updated"})
+
+          {:error, changeset} ->
+            conn
+            |> put_status(:bad_request)
+            |> json(%{errors: changeset})
+        end
     end
   end
 

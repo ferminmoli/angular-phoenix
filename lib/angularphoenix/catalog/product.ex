@@ -15,6 +15,6 @@ defmodule Angularphoenix.Catalog.Product do
   def changeset(product, attrs) do
     product
     |> cast(attrs, [:title, :description, :price, :views])
-    |> validate_required([:title, :description, :price, :views])
+    |> validate_required([:title, :description, :price])
   end
 end

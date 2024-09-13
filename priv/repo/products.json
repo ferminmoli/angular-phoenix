@@ -1,0 +1,25 @@
+[
+  {
+    "id": 1,
+    "title": "Prod 1",
+    "description": "Prod 1 Description",
+    "price": 23.11,
+    "views": 12
+  },
+
+  {
+    "id": 2,
+    "title": "Prod 2",
+    "description": "Prod 2 Description",
+    "price": 44.11,
+    "views": 44
+  },
+
+  {
+    "id": 3,
+    "title": "Prod 55",
+    "description": "Prod 55 Description",
+    "price": 66.11,
+    "views": 66
+  }
+]

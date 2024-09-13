@@ -1,11 +1,20 @@
-# Script for populating the database. You can run it as:
-#
-#     mix run priv/repo/seeds.exs
-#
-# Inside the script, you can read and write to any of your
-# repositories directly:
-#
-#     Angularphoenix.Repo.insert!(%Angularphoenix.SomeSchema{})
-#
-# We recommend using the bang functions (`insert!`, `update!`
-# and so on) as they will fail if something goes wrong.
+alias Angularphoenix.Catalog
+
+quotes_path = "priv/repo/products.json"
+quotes_path
+|> File.read!()
+|> Jason.decode!()
+|> Enum.each(fn attrs ->
+
+	product = %{
+    id: attrs["id"],
+    title: attrs["title"],
+    description: attrs["description"],
+    price: attrs["price"],
+    views: attrs["views"]
+  }
+	case Catalog.create_product(product) do
+		{:ok, _product} -> :ok
+		{:error, _changeset} -> :duplicate
+	end
+end)
