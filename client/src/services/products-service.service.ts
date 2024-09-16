@@ -15,7 +15,7 @@ export class ProductsService {
   getProducts(): Observable<Product[]> {
     return this.http
       .get<ProductsResponse>(this.apiUrl)
-      .pipe(map((response) => response.data));
+      .pipe(map((response) => response.data))
   }
 
   getProduct(id: number): Observable<Product> {

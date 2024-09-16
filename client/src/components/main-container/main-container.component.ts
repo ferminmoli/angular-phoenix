@@ -8,12 +8,12 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatToolbar } from '@angular/material/toolbar';
 import { MatIcon } from '@angular/material/icon';
 import { ProductFormDialogComponent } from './components/product-form-dialog';
-import { MatButton } from '@angular/material/button';
+import { MatButton, MatIconButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-main-container',
   standalone: true,
-  imports: [AsyncPipe, CurrencyPipe,  MatButton, MatTableModule, MatToolbar, MatIcon],
+  imports: [AsyncPipe, CurrencyPipe,  MatButton, MatIconButton, MatTableModule, MatToolbar, MatIcon],
   templateUrl: './main-container.component.html',
   styleUrl: './main-container.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
