@@ -1,25 +1,32 @@
 .container {
   margin: 16px;
   padding: 16px;
-  background-color: white;
-  border-radius: 8px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .toolbar {
   background-color: #ffffff;
-  color: white;
+  color: #005cbb;
   padding: 8px 16px;
-  border-radius: 4px 4px 0 0;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
 
   .spacer {
-    flex: 1 1 auto;
+    flex: 1;
   }
 
   button {
-    color: white;
+    font-weight: bold;
+    background-color: #005cbb;
+    color: #fff;
   }
 
   .title {
+    font-size: 1.5rem;
+    font-weight: 600;
     color: #005cbb;
   }
 }
@@ -27,14 +34,24 @@
 .product-table {
   width: 100%;
   margin-top: 16px;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
 
   th {
     font-weight: bold;
+    background-color: #e0e7ff;
+    color: #424242;
   }
 
-  td, th {
+  td,
+  th {
     padding: 16px;
     text-align: left;
+  }
+
+  tr:hover {
+    background-color: #f4f6f8;
   }
 }
 
