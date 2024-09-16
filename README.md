@@ -6,6 +6,7 @@ A Phoenix framework app with Angular 18 and TypeScript as its frontend.
 
 To start your Phoenix server:
 
+* Go to the api folder
 * Install dependencies with `mix deps.get`
 * Create and migrate your database with `mix ecto.setup`
 * Start the Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
@@ -24,7 +25,7 @@ mix run priv/repo/seeds.exs
 
 For developing the frontend:
 
-* Navigate to the frontend directory
+* Navigate to the client directory
 * Install all dependencies with `npm install`
 * Start the dev server with `ng serve`
 

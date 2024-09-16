@@ -1,4 +1,4 @@
-alias Angularphoenix.Catalog
+alias App.Catalog
 
 quotes_path = "priv/repo/products.json"
 quotes_path

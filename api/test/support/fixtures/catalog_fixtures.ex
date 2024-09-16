@@ -1,7 +1,7 @@
-defmodule Angularphoenix.CatalogFixtures do
+defmodule App.CatalogFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `Angularphoenix.Catalog` context.
+  entities via the `App.Catalog` context.
   """
 
   @doc """
@@ -16,7 +16,7 @@ defmodule Angularphoenix.CatalogFixtures do
         title: "some title",
         views: 42
       })
-      |> Angularphoenix.Catalog.create_product()
+      |> App.Catalog.create_product()
 
     product
   end

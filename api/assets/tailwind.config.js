@@ -8,8 +8,8 @@ const path = require("path")
 module.exports = {
   content: [
     "./js/**/*.js",
-    "../lib/angularphoenix_web.ex",
-    "../lib/angularphoenix_web/**/*.*ex"
+    "../lib/app_web.ex",
+    "../lib/app_web/**/*.*ex"
   ],
   theme: {
     extend: {

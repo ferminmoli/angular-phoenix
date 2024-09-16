@@ -1,9 +1,9 @@
-defmodule Angularphoenix.MixProject do
+defmodule App.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :angularphoenix,
+      app: :app,
       version: "0.1.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -18,7 +18,7 @@ defmodule Angularphoenix.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Angularphoenix.Application, []},
+      mod: {App.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -75,10 +75,10 @@ defmodule Angularphoenix.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind angularphoenix", "esbuild angularphoenix"],
+      "assets.build": ["tailwind app", "esbuild app"],
       "assets.deploy": [
-        "tailwind angularphoenix --minify",
-        "esbuild angularphoenix --minify",
+        "tailwind app --minify",
+        "esbuild app --minify",
         "phx.digest"
       ]
     ]
