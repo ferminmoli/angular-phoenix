@@ -1,14 +1,5 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  effect,
-  inject,
-  Injector,
-  input,
-  InputSignal,
-  output,
-} from '@angular/core';
 import { JsonPipe, NgOptimizedImage } from '@angular/common';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { Product } from '../../../../models/product.model';
 
 @Component({

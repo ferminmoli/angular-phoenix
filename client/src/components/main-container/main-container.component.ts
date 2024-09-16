@@ -1,20 +1,19 @@
 import { AsyncPipe, CurrencyPipe } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject } from '@angular/core';
 import { ProductsService } from '../../services';
-import { catchError, firstValueFrom, Observable, of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Product } from '../../models/product.model';
-import { ProductCardComponent } from './components/product-card';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIcon, MatIconModule} from '@angular/material/icon';
+import { MatToolbar } from '@angular/material/toolbar';
+import { MatIcon } from '@angular/material/icon';
 import { ProductFormDialogComponent } from './components/product-form-dialog';
-import { MatButtonModule} from '@angular/material/button';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-main-container',
   standalone: true,
-  imports: [AsyncPipe, CurrencyPipe,  MatButtonModule, MatTableModule, MatToolbarModule, MatIconModule],
+  imports: [AsyncPipe, CurrencyPipe,  MatButton, MatTableModule, MatToolbar, MatIcon],
   templateUrl: './main-container.component.html',
   styleUrl: './main-container.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
